@@ -9,12 +9,22 @@
 # Flip players
 
 # Global Vars
-game_still_going = True
 
 
+
+# Game board
 board = ["-", "-", "-",
          "-", "-", "-",
          "-", "-", "-"]
+
+# If game is still going
+game_still_going = True
+
+# Who won? Or Tie?
+winner = None
+
+# Who's turn is it
+current_player = "X"
 
 # We need to create a function to display the board
 
@@ -33,16 +43,24 @@ def play_game():
     # Display initial board
     display_board()
 
+    # This is our game loop
     while game_still_going:
 
         handle_turn(current_player)
 
+        # Check if the game is over
         check_if_game_over()
 
+        # Flip the player
         flip_player()
 
+    if winner == "X" or winner == "O":
+        print(winner + " won.")
+    elif winner is None:
+        print("Tie!")
 
-def handle_turn():
+
+def handle_turn(player):
     position = input("Please choose a number 1-9 for position!")
 
     # Because the input is string and the array starts with 0 we do this
@@ -54,24 +72,33 @@ def handle_turn():
 
 
 def check_if_game_over():
-
-    check_if_win()
-
-    check_if_tie()
+    check_for_winner()
+    check_for_tie()
 
 
-def check_if_win():
-
-
-def check_if_tie():
-    # Check if all the spaces are not -
+def check_for_winner():
     return
+
+
+def check_rows():
+    return
+
+
+def check_columns():
+    return
+
+
+def check_for_tie():
+
+    return
+
 
 def flip_player():
+    if current_player == "X":
+        current_player == "O"
+    else:
+        current_player == "X"
     return
-
-
-
 
 
 play_game()
