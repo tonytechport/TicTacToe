@@ -61,9 +61,6 @@ def check_if_game_over():
 
 
 def check_if_win():
-    # Check rows
-    # Check columns
-    # Check diagonals
 
 
 def check_if_tie():
